@@ -1,13 +1,97 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+.music__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main__music__container {
+  background-color: white;
+  /* padding: 4rem; */
+  height: 70%;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img__container {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1rem 0px rgba(0, 0, 0, 0.3);
+}
+.img__container img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: rotate 10s linear infinite;
+  animation-play-state: paused;
+}
+.progress__bar__container {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid palevioletred;
+  border-radius: 2rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.progress__bar {
+  width: 0;
+  height: 1rem;
+  border-radius: 2rem;
+  transition: all 0.3s linear;
+  background-color: palevioletred;
+}
+.img__container img.active {
+  animation-play-state: running;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.music__control {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s ease-out;
+}
+.btn__play {
+  font-size: 2rem;
+}
+.btn:hover {
+  transform: scale(1.2);
 }
